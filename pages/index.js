@@ -1,8 +1,8 @@
-import config from "./config.json"
+import config from "../config.json"
 import styled from "styled-components"
-import { CSSReset } from "./src/components/CSSReset"
-import Menu from "./src/components/Menu"
-import {StyledTimeline} from "./src/components/Timeline"
+import { CSSReset } from "../src/components/CSSReset"
+import Menu from "../src/components/Menu"
+import {StyledTimeline} from "../src/components/Timeline"
 
 function HomePage() {
     // const mensagem = "Bem-Vindo ao AluraTube!"
