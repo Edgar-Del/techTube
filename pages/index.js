@@ -1,23 +1,20 @@
 import React from "react"
 import config from "../config.json"
 import styled from "styled-components"
-import { CSSReset } from "../src/components/CSSReset"
 import Menu from "../src/components/Menu"
 import { StyledTimeline } from "../src/components/Timeline"
 
 function HomePage() {
-    // const mensagem = "Bem-Vindo ao AluraTube!"
-    const estiloDaHomePage = { backgroundColor: "red" }
     const [valorDoFiltro, setvalorDoFiltro] = React.useState("")
-
     return (
         <>
-            <CSSReset />
+           
             <div style={{
                 display: "flex",
                 flexDirection: "column",
                 flex: 1,
             }}>
+                {/**Prop Drilling*/}
                 <Menu valorDoFiltro={valorDoFiltro} setvalorDoFiltro={setvalorDoFiltro} />
                 <Header></Header>
                 <Timeline searchValue={valorDoFiltro} playlists={config.playlists}></Timeline>
@@ -31,6 +28,7 @@ export default HomePage
 
 
 const StyledHeader = styled.div`
+    background-color: ${({theme})=>theme.backgroundLevel1};
     img {
         height: 80px;
         width: 80px;
@@ -91,7 +89,7 @@ function Timeline({ searchValue, ...props }) {
                                         return <a key={video.url} href={video.url}>
                                             <img src={video.thumb} />
                                             <span>
-                                                {video.title}
+                                               {video.title}
                                             </span>
                                         </a>
                                     })
